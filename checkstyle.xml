@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<!DOCTYPE module PUBLIC
+        "-//Checkstyle//DTD Checkstyle Configuration 1.3//EN"
+        "https://checkstyle.org/dtds/configuration_1_3.dtd">
+
+<!--
+  Configuration Checkstyle personnalisée, basée sur google_checks.xml.
+
+  Modules retirés car trop stricts pour ce projet :
+    - Indentation, FileTabCharacter : le projet est indenté avec des tabulations
+    - SummaryJavadoc : point en fin de première ligne de la javadoc
+    - RequireEmptyLineBeforeBlockTagGroup : ligne vide avant les @param
+    - CustomImportOrder : ordre des imports propre à Google
+    - JavadocParagraph, JavadocContentLocation : mise en forme de la javadoc
+
+  Module assoupli :
+    - LineLength : 120 caractères au lieu de 100
+-->
+
+<module name="Checker">
+    <property name="charset" value="UTF-8"/>
+    <property name="severity" value="warning"/>
+    <property name="fileExtensions" value="java, properties, xml"/>
+
+    <module name="BeforeExecutionExclusionFileFilter">
+        <property name="fileNamePattern" value="module\-info\.java$"/>
+    </module>
+
+    <module name="LineLength">
+        <property name="fileExtensions" value="java"/>
+        <property name="max" value="120"/>
+        <property name="ignorePattern" value="^(package|import) .*"/>
+    </module>
+
+    <module name="TreeWalker">
+        <module name="OuterTypeFilename"/>
+        <module name="AvoidStarImport"/>
+        <module name="OneStatementPerLine"/>
+        <module name="MultipleVariableDeclarations"/>
+        <module name="ArrayTypeStyle"/>
+        <module name="MissingSwitchDefault"/>
+        <module name="FallThrough"/>
+        <module name="UpperEll"/>
+        <module name="ModifierOrder"/>
+        <module name="NoFinalizer"/>
+
+        <module name="NeedBraces">
+            <property name="tokens" value="LITERAL_DO, LITERAL_ELSE, LITERAL_FOR, LITERAL_IF, LITERAL_WHILE"/>
+        </module>
+        <module name="LeftCurly"/>
+        <module name="RightCurly"/>
+        <module name="EmptyBlock">
+            <property name="option" value="TEXT"/>
+            <property name="tokens" value="LITERAL_TRY, LITERAL_FINALLY, LITERAL_IF, LITERAL_ELSE, LITERAL_SWITCH"/>
+        </module>
+        <module name="EmptyCatchBlock">
+            <property name="exceptionVariableName" value="expected"/>
+        </module>
+
+        <module name="EmptyLineSeparator">
+            <property name="tokens"
+                      value="PACKAGE_DEF, IMPORT, STATIC_IMPORT, CLASS_DEF, INTERFACE_DEF, ENUM_DEF,
+                       STATIC_INIT, INSTANCE_INIT, METHOD_DEF, CTOR_DEF, VARIABLE_DEF, RECORD_DEF,
+                       COMPACT_CTOR_DEF"/>
+            <property name="allowNoEmptyLineBetweenFields" value="true"/>
+        </module>
+        <module name="SeparatorWrap">
+            <property name="id" value="SeparatorWrapDot"/>
+            <property name="tokens" value="DOT"/>
+            <property name="option" value="nl"/>
+        </module>
+        <module name="SeparatorWrap">
+            <property name="id" value="SeparatorWrapComma"/>
+            <property name="tokens" value="COMMA"/>
+            <property name="option" value="EOL"/>
+        </module>
+        <module name="OperatorWrap">
+            <property name="option" value="NL"/>
+            <property name="tokens"
+                      value="BAND, BOR, BSR, BXOR, DIV, EQUAL, GE, GT, LAND, LE, LITERAL_INSTANCEOF, LOR,
+                       LT, MINUS, MOD, NOT_EQUAL, PLUS, QUESTION, SL, SR, STAR"/>
+        </module>
+
+        <module name="WhitespaceAround">
+            <property name="allowEmptyConstructors" value="true"/>
+            <property name="allowEmptyLambdas" value="true"/>
+            <property name="allowEmptyMethods" value="true"/>
+            <property name="allowEmptyTypes" value="true"/>
+            <property name="allowEmptyLoops" value="true"/>
+        </module>
+        <module name="WhitespaceAfter"/>
+        <module name="GenericWhitespace"/>
+        <module name="MethodParamPad"/>
+        <module name="NoWhitespaceBefore"/>
+        <module name="ParenPad"/>
+
+        <module name="PackageName">
+            <property name="format" value="^[a-z]+(\.[a-z][a-z0-9]*)*$"/>
+        </module>
+        <module name="TypeName"/>
+        <module name="MemberName">
+            <property name="format" value="^[a-z][a-z0-9][a-zA-Z0-9]*$"/>
+        </module>
+        <module name="ParameterName">
+            <property name="format" value="^[a-z]([a-z0-9][a-zA-Z0-9]*)?$"/>
+        </module>
+        <module name="LambdaParameterName">
+            <property name="format" value="^[a-z]([a-z0-9][a-zA-Z0-9]*)?$"/>
+        </module>
+        <module name="CatchParameterName">
+            <property name="format" value="^[a-z]([a-z0-9][a-zA-Z0-9]*)?$"/>
+        </module>
+        <module name="LocalVariableName">
+            <property name="format" value="^[a-z]([a-z0-9][a-zA-Z0-9]*)?$"/>
+        </module>
+        <module name="MethodName">
+            <property name="format" value="^[a-z][a-z0-9]\w*$"/>
+        </module>
+        <module name="AbbreviationAsWordInName">
+            <property name="ignoreFinal" value="false"/>
+            <property name="allowedAbbreviationLength" value="1"/>
+        </module>
+
+        <module name="OverloadMethodsDeclarationOrder"/>
+        <module name="VariableDeclarationUsageDistance"/>
+        <module name="AnnotationLocation">
+            <property name="tokens" value="CLASS_DEF, INTERFACE_DEF, ENUM_DEF, METHOD_DEF, CTOR_DEF"/>
+        </module>
+        <module name="CommentsIndentation"/>
+
+        <module name="InvalidJavadocPosition"/>
+        <module name="SingleLineJavadoc"/>
+        <module name="NonEmptyAtclauseDescription"/>
+        <module name="AtclauseOrder">
+            <property name="tagOrder" value="@param, @return, @throws, @deprecated"/>
+            <property name="target" value="CLASS_DEF, INTERFACE_DEF, ENUM_DEF, METHOD_DEF, CTOR_DEF, VARIABLE_DEF"/>
+        </module>
+        <module name="MissingJavadocMethod">
+            <property name="scope" value="public"/>
+            <property name="minLineCount" value="2"/>
+            <property name="allowedAnnotations" value="Override, Test"/>
+        </module>
+        <module name="MissingJavadocType">
+            <property name="scope" value="protected"/>
+        </module>
+    </module>
+</module>
