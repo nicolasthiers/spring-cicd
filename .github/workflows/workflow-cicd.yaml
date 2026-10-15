@@ -28,7 +28,7 @@ jobs:
           languages: java-kotlin
 
       - name: Cnstruire avec Maven
-        run: mvn -B clean package -DskipTests
+        run: mvn -B clean verify -Dspring.profiles.active=test
 
       - name: Sauvegarder le rapport Jacoco v7
 
