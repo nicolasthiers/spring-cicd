@@ -36,6 +36,9 @@ jobs:
       - name: Construire avec Maven
         run: mvn -B clean verify -Dspring.profiles.active=test
 
+      - name: Générer le site Maven
+        run: mvn site
+
       - name: Sauvegarder le rapport Jacoco v7
 
         if: ${{ success() || failure() }}
