@@ -10,6 +10,9 @@ jobs:
       - name: Récupérer le code source
         uses: actions/checkout@v7
 
+      - name: Afficher la liste des fichiers
+        run: ls -la
+
       - name: Configurer JDK 21
         uses: actions/setup-java@v6
         with:
