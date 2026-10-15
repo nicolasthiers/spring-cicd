@@ -30,7 +30,7 @@ jobs:
       - name: Cnstruire avec Maven
         run: mvn -B clean package -DskipTests
 
-      - name: Sauvegarder le rapport Jacoco
+      - name: Sauvegarder le rapport Jacoco v7
 
         if: ${{ success() || failure() }}
         uses: actions/upload-artifact@v7
