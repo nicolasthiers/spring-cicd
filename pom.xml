@@ -11,7 +11,6 @@
 	<groupId>fr.diginamic</groupId>
 	<artifactId>appliweb</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>pom</packaging>
 	<name>appliweb</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
@@ -21,9 +20,6 @@
 	<developers>
 		<developer/>
 	</developers>
-	<modules>
-		<module>checkstyle.xml</module>
-	</modules>
 	<scm>
 		<connection/>
 		<developerConnection/>
