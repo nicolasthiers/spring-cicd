@@ -1,0 +1,413 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta charset="UTF-8"/>
+      <title>SpotBugs Report</title>
+      <style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+				color: red;
+				font-weight: bold;
+		}
+		.priority-2 {
+				color: orange;
+				font-weight: bold;
+		}
+		.priority-3 {
+				color: green;
+				font-weight: bold;
+		}
+		.priority-4 {
+				color: blue;
+				font-weight: bold;
+		}
+		</style>
+      <script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+   </head>
+   <body>
+      <h1>
+         <a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+      <h2>Project Information</h2>
+      <p>Project: 
+		appliweb</p>
+      <p>SpotBugs version: 4.10.5</p>
+      <p>Code analyzed:</p>
+      <ul>
+         <li>/home/runner/work/spring-cicd/spring-cicd/target/classes</li>
+      </ul>
+      <p>
+         <br/>
+         <br/>
+      </p>
+      <h2>Metrics</h2>
+      <p>694 lines of code analyzed,
+	in 25 classes, 
+	in 10 packages.</p>
+      <table width="500" cellpadding="5" cellspacing="2">
+         <tr class="tableheader">
+            <th align="left">Metric</th>
+            <th align="right">Total</th>
+            <th align="right">Density*</th>
+         </tr>
+         <tr class="tablerow0">
+            <td>High Priority Warnings</td>
+            <td align="right"/>
+            <td align="right">0.00</td>
+         </tr>
+         <tr class="tablerow1">
+            <td>Medium Priority Warnings</td>
+            <td align="right">13</td>
+            <td align="right">18.73</td>
+         </tr>
+         <tr class="$totalClass">
+            <td>
+               <b>Total Warnings</b>
+            </td>
+            <td align="right">
+               <b>13</b>
+            </td>
+            <td align="right">
+               <b>18.73</b>
+            </td>
+         </tr>
+      </table>
+      <p>
+         <i>(* Defects per Thousand lines of non-commenting source statements)</i>
+      </p>
+      <p>
+         <br/>
+         <br/>
+      </p>
+      <h2>Contents</h2>
+      <ul>
+         <li>
+            <a href="#Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+         </li>
+         <li>
+            <a href="#Warnings_STYLE">Dodgy code Warnings</a>
+         </li>
+         <li>
+            <a href="#Details">Details</a>
+         </li>
+      </ul>
+      <h1>Summary</h1>
+      <table width="500" cellpadding="5" cellspacing="2">
+         <tr class="tableheader">
+            <th align="left">Warning Type</th>
+            <th align="right">Number</th>
+         </tr>
+         <tr class="tablerow0">
+            <td>
+               <a href="#Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+            </td>
+            <td align="right">9</td>
+         </tr>
+         <tr class="tablerow1">
+            <td>
+               <a href="#Warnings_STYLE">Dodgy code Warnings</a>
+            </td>
+            <td align="right">4</td>
+         </tr>
+         <tr class="tablerow0">
+            <td>
+               <b>Total</b>
+            </td>
+            <td align="right">
+               <b>13</b>
+            </td>
+         </tr>
+      </table>
+      <h1>Warnings</h1>
+      <p>Click on a warning row to see full context information.</p>
+      <h2>
+         <a name="Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+      </h2>
+      <table class="warningtable" width="100%" cellspacing="0">
+         <tr class="tableheader">
+            <th align="left">Code</th>
+            <th align="left">Warning</th>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e92');">
+            <td>
+               <span class="priority-2">EI</span>
+            </td>
+            <td>fr.diginamic.appliweb.entites.Departement.getVilles() may expose internal representation by returning Departement.villes</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e92" style="display: none;">
+                  <a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+                  <br/>In class fr.diginamic.appliweb.entites.Departement<br/>In method fr.diginamic.appliweb.entites.Departement.getVilles()<br/>Field fr.diginamic.appliweb.entites.Departement.villes<br/>At Departement.java:[line 109]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e126');">
+            <td>
+               <span class="priority-2">EI</span>
+            </td>
+            <td>fr.diginamic.appliweb.entites.Ville.getDepartement() may expose internal representation by returning Ville.departement</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e126" style="display: none;">
+                  <a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+                  <br/>In class fr.diginamic.appliweb.entites.Ville<br/>In method fr.diginamic.appliweb.entites.Ville.getDepartement()<br/>Field fr.diginamic.appliweb.entites.Ville.departement<br/>At Ville.java:[line 127]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e178');">
+            <td>
+               <span class="priority-2">EI</span>
+            </td>
+            <td>fr.diginamic.appliweb.mappers.dtos.DepartementDto.getVilles() may expose internal representation by returning DepartementDto.villes</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e178" style="display: none;">
+                  <a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+                  <br/>In class fr.diginamic.appliweb.mappers.dtos.DepartementDto<br/>In method fr.diginamic.appliweb.mappers.dtos.DepartementDto.getVilles()<br/>Field fr.diginamic.appliweb.mappers.dtos.DepartementDto.villes<br/>At DepartementDto.java:[line 82]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e212');">
+            <td>
+               <span class="priority-2">EI</span>
+            </td>
+            <td>fr.diginamic.appliweb.mappers.dtos.VilleDto.getDepartement() may expose internal representation by returning VilleDto.departement</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e212" style="display: none;">
+                  <a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+                  <br/>In class fr.diginamic.appliweb.mappers.dtos.VilleDto<br/>In method fr.diginamic.appliweb.mappers.dtos.VilleDto.getDepartement()<br/>Field fr.diginamic.appliweb.mappers.dtos.VilleDto.departement<br/>At VilleDto.java:[line 95]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e108');">
+            <td>
+               <span class="priority-2">EI2</span>
+            </td>
+            <td>fr.diginamic.appliweb.entites.Departement.setVilles(List) may expose internal representation by storing an externally mutable object into Departement.villes</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e108" style="display: none;">
+                  <a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+                  <br/>In class fr.diginamic.appliweb.entites.Departement<br/>In method fr.diginamic.appliweb.entites.Departement.setVilles(List)<br/>Field fr.diginamic.appliweb.entites.Departement.villes<br/>Local variable named villes<br/>At Departement.java:[line 118]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e142');">
+            <td>
+               <span class="priority-2">EI2</span>
+            </td>
+            <td>new fr.diginamic.appliweb.entites.Ville(String, int, Departement) may expose internal representation by storing an externally mutable object into Ville.departement</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e142" style="display: none;">
+                  <a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+                  <br/>In class fr.diginamic.appliweb.entites.Ville<br/>In method new fr.diginamic.appliweb.entites.Ville(String, int, Departement)<br/>Field fr.diginamic.appliweb.entites.Ville.departement<br/>Local variable named dept<br/>At Ville.java:[line 48]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e160');">
+            <td>
+               <span class="priority-2">EI2</span>
+            </td>
+            <td>fr.diginamic.appliweb.entites.Ville.setDepartement(Departement) may expose internal representation by storing an externally mutable object into Ville.departement</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e160" style="display: none;">
+                  <a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+                  <br/>In class fr.diginamic.appliweb.entites.Ville<br/>In method fr.diginamic.appliweb.entites.Ville.setDepartement(Departement)<br/>Field fr.diginamic.appliweb.entites.Ville.departement<br/>Local variable named departement<br/>At Ville.java:[line 136]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e194');">
+            <td>
+               <span class="priority-2">EI2</span>
+            </td>
+            <td>fr.diginamic.appliweb.mappers.dtos.DepartementDto.setVilles(List) may expose internal representation by storing an externally mutable object into DepartementDto.villes</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e194" style="display: none;">
+                  <a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+                  <br/>In class fr.diginamic.appliweb.mappers.dtos.DepartementDto<br/>In method fr.diginamic.appliweb.mappers.dtos.DepartementDto.setVilles(List)<br/>Field fr.diginamic.appliweb.mappers.dtos.DepartementDto.villes<br/>Local variable named villes<br/>At DepartementDto.java:[line 91]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e228');">
+            <td>
+               <span class="priority-2">EI2</span>
+            </td>
+            <td>fr.diginamic.appliweb.mappers.dtos.VilleDto.setDepartement(DepartementDto) may expose internal representation by storing an externally mutable object into VilleDto.departement</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e228" style="display: none;">
+                  <a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+                  <br/>In class fr.diginamic.appliweb.mappers.dtos.VilleDto<br/>In method fr.diginamic.appliweb.mappers.dtos.VilleDto.setDepartement(DepartementDto)<br/>Field fr.diginamic.appliweb.mappers.dtos.VilleDto.departement<br/>Local variable named departement<br/>At VilleDto.java:[line 104]</p>
+            </td>
+         </tr>
+      </table>
+      <h2>
+         <a name="Warnings_STYLE">Dodgy code Warnings</a>
+      </h2>
+      <table class="warningtable" width="100%" cellspacing="0">
+         <tr class="tableheader">
+            <th align="left">Code</th>
+            <th align="left">Warning</th>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e246');">
+            <td>
+               <span class="priority-2">NP</span>
+            </td>
+            <td>Possible null pointer dereference in fr.diginamic.appliweb.services.DepartementServiceDefaut.completeDepartement(Departement) due to return value of called method</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e246" style="display: none;">
+                  <a href="#NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE">Bug type NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE (click for details)</a>
+                  <br/>In class fr.diginamic.appliweb.services.DepartementServiceDefaut<br/>In method fr.diginamic.appliweb.services.DepartementServiceDefaut.completeDepartement(Departement)<br/>Value loaded from response<br/>Dereferenced at DepartementServiceDefaut.java:[line 188]<br/>Known null at DepartementServiceDefaut.java:[line 187]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e263');">
+            <td>
+               <span class="priority-2">ST</span>
+            </td>
+            <td>Write to static field fr.diginamic.appliweb.utils.pdf.PdfUtils.fontBold from instance method fr.diginamic.appliweb.utils.pdf.PdfUtils.createPdf(Departement, HttpServletResponse)</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e263" style="display: none;">
+                  <a href="#ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD">Bug type ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD (click for details)</a>
+                  <br/>In class fr.diginamic.appliweb.utils.pdf.PdfUtils<br/>In method fr.diginamic.appliweb.utils.pdf.PdfUtils.createPdf(Departement, HttpServletResponse)<br/>Field fr.diginamic.appliweb.utils.pdf.PdfUtils.fontBold<br/>At PdfUtils.java:[line 52]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e279');">
+            <td>
+               <span class="priority-2">ST</span>
+            </td>
+            <td>Write to static field fr.diginamic.appliweb.utils.pdf.PdfUtils.fontItalic from instance method fr.diginamic.appliweb.utils.pdf.PdfUtils.createPdf(Departement, HttpServletResponse)</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e279" style="display: none;">
+                  <a href="#ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD">Bug type ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD (click for details)</a>
+                  <br/>In class fr.diginamic.appliweb.utils.pdf.PdfUtils<br/>In method fr.diginamic.appliweb.utils.pdf.PdfUtils.createPdf(Departement, HttpServletResponse)<br/>Field fr.diginamic.appliweb.utils.pdf.PdfUtils.fontItalic<br/>At PdfUtils.java:[line 53]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e295');">
+            <td>
+               <span class="priority-2">ST</span>
+            </td>
+            <td>Write to static field fr.diginamic.appliweb.utils.pdf.PdfUtils.fontRegular from instance method fr.diginamic.appliweb.utils.pdf.PdfUtils.createPdf(Departement, HttpServletResponse)</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e295" style="display: none;">
+                  <a href="#ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD">Bug type ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD (click for details)</a>
+                  <br/>In class fr.diginamic.appliweb.utils.pdf.PdfUtils<br/>In method fr.diginamic.appliweb.utils.pdf.PdfUtils.createPdf(Departement, HttpServletResponse)<br/>Field fr.diginamic.appliweb.utils.pdf.PdfUtils.fontRegular<br/>At PdfUtils.java:[line 51]</p>
+            </td>
+         </tr>
+      </table>
+      <h1>
+         <a name="Details">Details</a>
+      </h1>
+      <h2>
+         <a name="EI_EXPOSE_REP">EI_EXPOSE_REP: May expose internal representation by returning reference to mutable object</a>
+      </h2>
+
+  <p> Returning a reference to a mutable object value stored in one of the object's fields
+  exposes the internal representation of the object.&nbsp;
+   If instances
+   are accessed by untrusted code, and unchecked changes to
+   the mutable object would compromise security or other
+   important properties, you will need to do something different.
+  Returning a new copy of the object is better approach in many situations.</p>
+  <p>See <a href="https://cwe.mitre.org/data/definitions/374.html">CWE-374: Passing Mutable Objects to an Untrusted Method</a>.
+</p>
+
+    <h2>
+         <a name="EI_EXPOSE_REP2">EI_EXPOSE_REP2: May expose internal representation by incorporating reference to mutable object</a>
+      </h2>
+
+  <p> This code stores a reference to an externally mutable object into the
+  internal representation of the object.&nbsp;
+   If instances
+   are accessed by untrusted code, and unchecked changes to
+   the mutable object would compromise security or other
+   important properties, you will need to do something different.
+  Storing a copy of the object is better approach in many situations.</p>
+  <p>See <a href="https://cwe.mitre.org/data/definitions/374.html">CWE-374: Passing Mutable Objects to an Untrusted Method</a>.
+</p>
+
+    <h2>
+         <a name="NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE">NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE: Possible null pointer dereference due to return value of called method</a>
+      </h2>
+      
+<p> The return value from a method is dereferenced without a null check,
+and the return value of that method is one that should generally be checked
+for null.  This may lead to a <code>NullPointerException</code> when the code is executed.
+</p>
+      
+   <h2>
+         <a name="ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD">ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD: Write to static field from instance method</a>
+      </h2>
+
+  <p> This instance method writes to a static field. This is tricky to get
+correct if multiple instances are being manipulated,
+and generally bad practice.
+</p>
+
+    </body>
+</html>
